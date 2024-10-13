@@ -9,11 +9,11 @@ OBJS = $(SRCS:.c=.o)
 
 BONUS_OBJS = $(SRCS_BONUS:.c=.o)
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-HEADER = libft.h 
+HEADER = printf.h 
 
 AR = ar rcs
 
@@ -24,8 +24,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(BONUS_OBJS)
-	$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
+	$(AR) $(NAME) $(BONUS_OBJS)
 
 
 %.o: %.c $(HEADER)

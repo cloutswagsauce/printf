@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfaria-m <lfaria-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lfaria-m <lfaria-m@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 11:41:33 by lfaria-m          #+#    #+#             */
-/*   Updated: 2024/10/11 12:00:18 by lfaria-m         ###   ########.fr       */
+/*   Created: 2024/10/13 12:20:29 by lfaria-m          #+#    #+#             */
+/*   Updated: 2024/10/13 12:21:02 by lfaria-m         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdarg.h>
+#define HEX_UPPER = '0123456789ABCDEF'
 
+#define HEX_LOWER = '0123456789abcdef'
 int	ft_printf(const char *, ...);
+
+
 
 #endif PRINTF_H
