@@ -1,19 +1,15 @@
 NAME = libftprintf.a
 
-SRCS = $(wildcard ft_*.c)
-
-SRCS_BONUS = $(wildcard ft_*bonus.c)
-
+SRCS = ft_printf.c helper_funcs/print_di.c helper_funcs/print_p.c helper_funcs/print_s.c helper_funcs/print_u.c helper_funcs/print_xX.c
 
 OBJS = $(SRCS:.c=.o)
 
-BONUS_OBJS = $(SRCS_BONUS:.c=.o)
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I./includes/
 
-HEADER = printf.h 
+HEADER = ft_printf.h 
 
 AR = ar rcs
 
@@ -22,20 +18,20 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	$(MAKE) -C ./libft_notmine
+	cp libft_notmine/libft.a $(NAME)
 	$(AR) $(NAME) $(OBJS)
-
-bonus: $(BONUS_OBJS)
-	$(AR) $(NAME) $(BONUS_OBJS)
-
 
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 
 re: fclean all
+
+.PHONY: all clean fclean re
